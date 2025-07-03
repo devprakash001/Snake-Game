@@ -186,7 +186,7 @@ export default function SnakeGame() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Snake Game
+        Snake Game By Dev Prakash Singh
       </motion.h1>
       <div className="flex items-center justify-between w-full max-w-md mb-4">
         <motion.div 
