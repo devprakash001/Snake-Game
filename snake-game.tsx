@@ -25,7 +25,7 @@ const GAME_SPEEDS: Record<Difficulty, number> = {
 export default function SnakeGame() {
   const [snake, setSnake] = useState<Position[]>(INITIAL_SNAKE)
   const [direction, setDirection] = useState<Direction>(INITIAL_DIRECTION)
-  const [food, setFood] = useState<Position>(getRandomPosition())
+  const [food, setFood] = useState<Position>([0, 0])
   const [gameOver, setGameOver] = useState(false)
   const [score, setScore] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
@@ -138,6 +138,10 @@ export default function SnakeGame() {
       }
     }
   }, [isPlaying, difficulty, moveSnake])
+
+  useEffect(() => {
+    setFood(getRandomPosition())
+  }, [])
 
   const resetGame = () => {
     setSnake(INITIAL_SNAKE)
